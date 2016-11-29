@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 2</title>
+
+		<script>
+
+		function calcularPrimo(num){
+
+			var prim=true;
+
+    		for(var i=2;i<num; i++){
+    			if(num%i==0){
+    				prim=false;
+    			}
+    		}
+			
+			if (prim==true){
+				document.write(num+"</br>");
+				return true;
+			}
+		}
+		
+		</script>
+
+	</head>
+
+	<body>
+
+		<script>
+		var contador=0;
+		var i=1;
+		while(contador<100){
+			if(calcularPrimo(i)==true){contador++;}
+			i++;
+		}
+		
+		</script>
+
+	</body>
+</html>

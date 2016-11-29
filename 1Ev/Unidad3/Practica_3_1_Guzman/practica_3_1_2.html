@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+
+			var fecha = new Object();
+			fecha.dia = "";
+			fecha.mes = "";
+			fecha.anyo = "";
+
+			function cadena(){
+				var fechaCadena = prompt("INTRODUCE UNA FECHA");
+				var correcta=true;
+
+				for(var i=0;i<fechaCadena.length;i++){
+					if(i!=2 && i!=5){
+						if(isNaN(fechaCadena.charAt(i))==true){
+							correcta=false;
+						}
+					}else if(fechaCadena.charAt(i)=="-" || fechaCadena.charAt(i)=="/"){
+						correcta=true;
+					}else{
+						correcta=false;
+					}
+				}
+
+				diaCadena = fechaCadena.substring(0,2);
+				mesCadena = fechaCadena.substring(3,5);
+				anyoCadena = fechaCadena.substring(6,10);
+
+				if(diaCadena>31 || diaCadena<1 || mesCadena>12 || mesCadena<1 || anyoCadena>2100 || anyoCadena<1900){
+					document.getElementsByTagName("p")[0].innerHTML = "no es una fecha correcta";
+					correcta=false;
+				}else{
+					fecha.dia = diaCadena;
+					fecha.mes = mesCadena;
+					fecha.anyo = anyoCadena;
+				}
+				
+
+				if(correcta==false){
+					document.getElementsByTagName("p")[0].innerHTML = "no es una fecha";
+				}else{document.getElementsByTagName("p")[0].innerHTML = fecha.dia+"-"+fecha.mes+"-"+fecha.anyo;}
+					
+			}
+
+			function dia(){
+				var dia = prompt("INTRODUCE UN DIA");
+
+				if(dia.length>2 || dia.length<1 || dia>31 || dia<1){
+					document.getElementsByTagName("p")[0].innerHTML = "no es un dia correcto";
+				}else{
+					fecha.dia = dia;
+					document.getElementsByTagName("p")[0].innerHTML = fecha.dia+"-"+fecha.mes+"-"+fecha.anyo;
+				}
+
+			}
+
+			function mes(){
+				var mes = prompt("INTRODUCE UN MES");
+
+				if(mes.length>2 || mes.length<1 || mes>12 || mes<1){
+					document.getElementsByTagName("p")[0].innerHTML = "no es un mes correcto";
+				}else{
+					fecha.mes = mes;
+					document.getElementsByTagName("p")[0].innerHTML = fecha.dia+"-"+fecha.mes+"-"+fecha.anyo;
+				}
+			}
+
+			function anyo(){
+				var anyo = prompt("INTRODUCE UN AÑO");
+
+				if(anyo.length>4 || anyo.length<1 || anyo>2100 || anyo<1900){
+					document.getElementsByTagName("p")[0].innerHTML = "no es un anyo correcto";
+				}else{
+					fecha.anyo = anyo;
+					document.getElementsByTagName("p")[0].innerHTML = fecha.dia+"-"+fecha.mes+"-"+fecha.anyo;
+				}
+			}
+
+			function numeros(){
+				var dia = prompt("INTRODUCE UN DIA");
+
+				if(dia.length>2 || dia.length<1 || dia>31 || dia<1){
+					document.getElementsByTagName("p")[0].innerHTML = "no es un dia correcto";
+				}else{
+					fecha.dia = dia;
+					document.getElementsByTagName("p")[0].innerHTML = fecha.dia+"-"+fecha.mes+"-"+fecha.anyo;
+				}
+
+			
+
+				var mes = prompt("INTRODUCE UN MES");
+
+				if(mes.length>2 || mes.length<1 || mes>12 || mes<1){
+					document.getElementsByTagName("p")[0].innerHTML = "no es un mes correcto";
+				}else{
+					fecha.mes = mes;
+					document.getElementsByTagName("p")[0].innerHTML = fecha.dia+"-"+fecha.mes+"-"+fecha.anyo;
+				}
+			
+				var anyo = prompt("INTRODUCE UN AÑO");
+					
+				if(anyo.length>4 || anyo.length<1 || anyo>2100 || anyo<1900){
+					document.getElementsByTagName("p")[0].innerHTML = "no es un anyo correcto";
+				}else{
+					fecha.anyo = anyo;
+					document.getElementsByTagName("p")[0].innerHTML = fecha.dia+"-"+fecha.mes+"-"+fecha.anyo;
+				}
+			}
+		</script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<input type="button" value="cadena" onclick="cadena()"/>
+		<input type="button" value="dia" onclick="dia()"/>
+		<input type="button" value="mes" onclick="mes()"/>
+		<input type="button" value="anyo" onclick="anyo()"/>
+		<input type="button" value="numeros" onclick="numeros()"/>
+		<p id="pantalla"></p>
+	</body>
+</html>	

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 7</title>
+
+		<script>
+
+			function calcularCapicua(num){
+
+				var capicua="";
+				var num2=num.toString();
+
+				for(var i=num2.length;i>=0;i--){
+					capicua=capicua.concat(num2.charAt(i));
+				}
+
+				if(num2==capicua){document.write("ES CAPICUA");
+				}else{document.write("NO ES CAPICUA");}
+
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<script>
+
+		var numero = prompt("Introduce un número:");
+		calcularCapicua(numero);
+		
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejemplo</title>
+
+		<style>
+
+		body{
+			text-align: center;
+		}
+
+		button{
+			width: 125px;
+			height: 50px;
+		}
+
+		</style>
+
+	</head>
+
+	<body id="cuerpo">
+
+	<h1 id="texto">Texto de prueba</h1>
+
+ 		
+
+		<script>
+		document.write('<select name="colorTexto">');
+   			 document.write('<option value="red" onclick="cambiarColor(\'red\')">Rojo</option>');
+   			 document.write('<option value="blue" onclick="cambiarColor(\'blue\')">Azul</option>');
+   			 document.write('<option value="green" onclick="cambiarColor(\'green\')">Verde</option>');
+   			 document.write('<option value="black" onclick="cambiarColor(\'black\')">Negro</option>');
+ 		 document.write('</select>');
+ 		 document.write('<br>');
+
+	document.write("<h1>Cambiar Fondo</h1>");
+	
+		document.write('<select name="colorTexto">');
+   			 document.write('<option value="red" onclick="cambiarFondo(\'red\')">Rojo</option>');
+   			 document.write('<option value="green" onclick="cambiarFondo(\'green\')">Verde</option>');
+   			 document.write('<option value="blue" onclick="cambiarFondo(\'blue\')">Azul</option>');
+   			document.write('<option value="black" onclick="cambiarFondo(\'black\')">Negro</option>');
+ 		 document.write("</select>");
+
+		function cambiarColor(color){
+			document.getElementById('texto').style.color=color;
+		}
+		function cambiarFondo(color){
+			document.getElementById("cuerpo").style.backgroundColor=color;
+		}
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 7</title>
+
+		<script>
+
+			function calcularPalindromo(cadena){
+
+				var palindromo="";
+				var cadena2=cadena.toString();
+
+				for(var i=cadena2.length;i>=0;i--){
+					palindromo=palindromo.concat(cadena2.charAt(i));
+				}
+
+				if(cadena2==palindromo){document.write("ES PALINDROMO");
+				}else{document.write("NO ES PALINDROMO");}
+
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<script>
+
+		var cadena = prompt("Introduce una palabra:");
+		calcularPalindromo(cadena);
+		
+		</script>
+
+	</body>
+</html>

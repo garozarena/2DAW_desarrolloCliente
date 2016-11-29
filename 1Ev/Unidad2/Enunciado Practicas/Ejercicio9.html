@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 9</title>
+
+		<script>
+
+			function calcularPrimo(num){
+				
+				var esprimo;
+
+				if (num != null) {
+    				for(var i=2;i<num; i++){
+    					if(num%i==0){
+    						esprimo=false;
+    					}
+    				}
+				}
+
+				if(esprimo!=false){
+					document.write("Añadido el "+num+"<br>");
+					return true;
+				}
+			}
+
+			function calcularSmith(num){
+
+				var result=0;
+				var divisibles = new Array();
+				var resultdiv=0;
+				var resultado=0;
+				divisibles.push(1);
+
+				for(var i=0;i<num;i++){
+					if(i>1 && num%i==0 && calcularPrimo(i)==true){
+						divisibles.push(i);
+					}
+				}
+				document.write(divisibles);
+
+				for(var j=0;j<num.length;j++){
+					result+=parseInt(num.charAt(j));
+				}
+
+				while(resultdiv!=num){
+					resultdiv=
+				}
+
+				document.write(result);
+
+
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<script>
+
+		var numero = prompt("Introduce un número:");
+		calcularSmith(numero);
+		
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 5</title>
+
+		<script>
+
+		function calcularBisiesto(num){
+			if(num%4==0){
+				if(num%100==0){
+					if(num%400==0){document.write("ES UN AÑO BISIESTO");}
+					else{document.write("NO ES UN AÑO BISIESTO");}
+				}else{document.write("ES UN AÑO BISIESTO");}
+			}else{document.write("NO ES UN AÑO BISIESTO");}
+		}
+
+			
+		
+		</script>
+
+	</head>
+
+	<body>
+
+		<script>
+		
+			var numero = parseInt(prompt("INTRODUCE UN NUMERO"));
+
+			calcularBisiesto(numero);
+		
+		</script>
+
+	</body>
+</html>

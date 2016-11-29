@@ -1,0 +1,39 @@
+<!--Un hiperenlace con el literal 'Cambiar el título a ventana padre' que llamará a
+una función javascript que desde esta ventana va a cambiar el título de la
+ventana padre, poniendo el literal "Ventana padre de gestión de ventanas".
+
+ Un hiperenlace con el literal 'Cerrar ventanas' que llamará a un función
+javascript que se encarga de ¿cerrar la ventana padre? y la propia ventana
+
+ Un hiperenlace con el literal 'Abrir segunda página hija' que llamará a la
+función de la ventana padre que se encarga de realizar esta acción
+
+ un hiperenlace con el literal 'Cambiar segunda página hija' que llamará a la
+función de la ventana padre que se encarga de realizar esta acción-->
+
+<!doctype html>
+<html>
+    <head>
+         <meta charset="utf-8" /><title></title>
+         <script type="text/javascript">
+         	
+         	function cambiarTituloPadre(){
+         		window.opener.document.title="Ventana padre de gestión de ventana";
+         	}
+         	function cerrarVentanas(){
+         		window.close();
+         		window.opener.close();//no hace nada, no se puede
+         	}
+
+         </script>
+         <style>
+         </style>
+         
+    </head>
+    <body>
+         <a href="javascript:cambiarTituloPadre()">Cambiar el título a ventana padre</a><br>
+         <a href="javascript:cerrarVentanas()">Cerrar ventanas</a><br>
+         <a href="javascript:window.opener.crearSegundaPagina()">Abrir la segunda página hija</a><br>
+         <a href="javascript:window.opener.cambiarSegundaPagina()">Cambiar segunda página hija</a><br>
+    </body>
+</html>

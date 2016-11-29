@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+
+			function redondeo(num){
+				var numFinal = Math.round(num);
+				document.write("REDONDEO: "+numFinal+"<br>");
+			}
+
+			function defecto(num){
+				var numFinal = Math.floor(num);
+				document.write("DEFECTO: "+numFinal+"<br>");
+			}
+			function exceso(num){
+				var numFinal = "";
+				if(num != Math.floor(num)){
+					numFinal = parseInt(num.substring(0,1))+1;
+				}else{numFinal=parseInt(num);}
+				document.write("EXCESO: "+numFinal+"<br>");
+			}
+
+		</script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var num = prompt("ESCRIBE UN NUMERO DECIMAL");
+		redondeo(num);
+		defecto(num);
+		exceso(num);
+		</script>
+	</body>
+</html>	
+Math.floor((Math.random() * 10) + 1);

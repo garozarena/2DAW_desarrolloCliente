@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" /><title></title>
+        <!--<script type="text/javascript" src="prueba.js"></script>-->
+        <style>
+        img{
+            height: 150px;
+            width: auto;
+        }
+        .perimetro{
+            color:red;
+        }
+        td{
+            width:150px;
+        }
+        form, table{
+             margin-left:37%;
+        }
+        </style>
+
+        <script>
+
+            var radio=0;
+
+            function asignar(num){
+                radio=num;
+            } 
+            function CalcularPerimetro(){
+                var perimetro=2*3.1416*radio;
+                document.getElementById("circun").innerHTML = "P = <span id='peri'>"+perimetro+" cm</span>";
+                document.getElementById("peri").style.color="RED";
+            }
+            function CalcularArea(){
+                var area=3.1416*Math.pow(radio, 2);
+                document.getElementById("circul").innerHTML = "A = <span id='area'>"+area+" cm²</span>";
+                document.getElementById("area").style.color="GREEN";
+            }
+            function CalcularVolumen(){
+                var volumen=(4*3.1416*Math.pow(radio, 3));
+                document.getElementById("esfera").innerHTML = "B = <span id='volumen'>"+volumen+" cm³</span>";
+                document.getElementById("volumen").style.color="BLUE";
+            }
+            
+        </script>
+         
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><img src="Circunferencia.png"></td>
+                <td align="center">2*π*r</td> 
+                <td id="circun">P = </td>
+            </tr>
+            <tr>
+                <td><img src="circulo.jpg"></td>
+                <td align="center">π*r²</td> 
+                <td id="circul">A = </td>
+            </tr>
+            <tr>
+                <td><img src="Esfera.png"></td>
+                <td align="center">(4*π*r³)*3</td> 
+                <td id="esfera">B = </td>
+            </tr>
+        </table>
+        <div id=form>
+        <form>
+            <input type="button" onClick="CalcularPerimetro()" value="Perimetro"/>
+            <input type="button" onClick="CalcularArea()" value="Area"/>
+            <input type="button" onClick="CalcularVolumen()" value="Volumen"/>
+            <select id="radio" name="radio">
+                <option value="" selected="selected">- selecciona -</option>
+                <option value="1" onclick="asignar(1)">1</option>
+                <option value="2" onclick="asignar(2)">2</option>
+                <option value="3" onclick="asignar(3)">3</option>
+                <option value="4" onclick="asignar(4)">4</option>
+            </select>
+        </form>
+        </div>
+    </body>
+</html>

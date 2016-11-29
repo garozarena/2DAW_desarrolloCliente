@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+         <meta charset="utf-8" /><title></title>
+         <style>
+         </style>
+         
+    </head>
+    <body>
+         <script type="text/javascript">
+			document.writeln("La resolución de tu pantalla es "+screen.width+"x"+screen.height+"<br>");
+
+			var es_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+			var es_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+			var es_opera = navigator.userAgent.toLowerCase().indexOf('opr') > -1;
+			var es_ie = navigator.userAgent.indexOf("MSIE") > -1 ;
+			var es_safari = navigator.userAgent.toLowerCase().indexOf('safari')>-1;
+			var navegador="";
+
+			if(es_opera){
+			    navegador = "Opera";
+			}else if(es_chrome){
+			   navegador = "Chrome";
+			}else if(es_firefox){
+			   navegador = "Mozilla Firefox";
+			}else if(es_ie){
+			    navegador = "Internet Explorer";
+			}else if(es_safari){
+			    navegador = "Safari";
+			}
+
+			document.writeln(navigator.userAgent.toLowerCase()+"<br>");
+			document.writeln(navigator.userAgent.toLowerCase().indexOf('chrome')+" : Chrome<br>");
+			document.writeln(navigator.userAgent.toLowerCase().indexOf('firefox')+" : Firefox<br>");
+			document.writeln(navigator.userAgent.toLowerCase().indexOf('opr')+" : Opera<br>");
+			document.writeln(navigator.userAgent.indexOf('MSIE')+" : Ie<br>");
+			document.writeln(navigator.userAgent.toLowerCase().indexOf('safari')+" : Safari<br>");
+			document.writeln("Tu navegador actual es "+navegador);
+         </script>
+    </body>
+</html>

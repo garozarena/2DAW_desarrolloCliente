@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+
+		function comprobarRandom(num){
+
+			var rdm=0;
+			if(num<1 || num>20){
+				num = prompt("El numero tiene que estar entre el 1 y el 20");
+			}else{
+				rdm = Math.floor((Math.random() * 20) + 1);
+				while(num!=rdm){
+					if(num<rdm){num = prompt("El numero es mayor: ");
+					}else{num = prompt("El numero es menor: ");}
+				}
+				document.write("ACERTASTE, ERA EL "+rdm);
+			}
+			
+		}
+
+		</script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+		var num = prompt("INTRODUCE UN NUMERO:");
+		comprobarRandom(num);
+
+		</script>
+	</body>
+</html>	

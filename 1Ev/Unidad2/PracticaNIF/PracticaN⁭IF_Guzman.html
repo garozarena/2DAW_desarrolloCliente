@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>NIF</title>
+		<script>
+
+		function nifCIF(dni){
+	        var cadena="TRWAGMYFPDXBNJZSQVHLCKET";
+	        var posicion = dni%23;
+	        var letra = cadena.substring(posicion,posicion+1);
+	        return letra;
+    	}
+    
+
+		</script>
+	</head>
+	<body>
+		<script>
+
+			var dni = prompt("INTRODUCE UN NUMERO");
+			var numero = dni.substring(0, 8);
+			var letra = dni.substring(8,9);
+
+			switch(dni.substring(0,1)){
+				case "X" || "K" || "L" || "M":
+					numero = dni.substring(1,8);
+					document.write(numero);
+					break;
+				case "Y":
+					numero = "1".concat( dni.substring(1,8));
+					document.write(numero);
+					break;
+				case "Z":
+					numero = "2".concat(dni.substring(1,8));
+					document.write(numero);
+					break;
+				default:
+					document.write("ERROR - ");
+			}
+
+			if(nifCIF(numero)!=letra.toUpperCase()){document.write("NUMERO INCORRECTO");}
+			else{document.write("NUMERO CORRECTO");}
+
+		</script>
+	</body>
+</html>

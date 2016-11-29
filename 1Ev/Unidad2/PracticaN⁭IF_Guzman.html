@@ -1,0 +1,146 @@
+<html>
+	<head>
+		<title>NIF</title>
+		<script>
+
+		function NiF(numNiF){
+
+	        var numero = numNiF.substring(0, 8);
+			var letraNiF = numNiF.substring(8,9);
+	        var cadena="TRWAGMYFPDXBNJZSQVHLCKET";
+	        var posicion = numero%23;
+	        var letra = cadena.substring(posicion,posicion+1);
+
+	        document.write(numero);
+	        document.write("<br>");
+	        document.write(letraNiF);
+	        document.write("<br>");
+	        document.write(posicion);
+	        document.write("<br>");
+	        document.write(letra);
+
+	        /*RECONOCE SI ES UNA CIFRA DE ENTRE 6 Y 8 NUMEROS*/
+	        /*DEVUELVE 0*/
+
+	        if(numNiF.length<6 || numNiF.length>9 || typeof(numero)!=number){
+	        	return 0;
+	        }
+
+	        /*AVERIGUA EL PRIMER CARACTER DE LA CADENA*/
+
+			switch(numNiF.substring(0,1)){
+				/*LETRAS*/
+				/*SI ES X, K, L, M SE CAMBIA POR UN 0(SE DEJA IGUAL)*/
+				case "X":
+					numero = numNiF.substring(1,8);
+					document.write(numero);
+					break;
+				case "K":
+					numero = numNiF.substring(1,8);
+					document.write(numero);
+					break;
+				case "L":
+					numero = numNiF.substring(1,8);
+					document.write(numero);
+					break;
+				case "M":
+					numero = numNiF.substring(1,8);
+					document.write(numero);
+					break;
+				/*SI ES Y SE CAMBIA POR UN 1*/
+				case "Y":
+					numero = "1".concat( numNiF.substring(1,8));
+					document.write(numero);
+					break;
+				/*SI ES Z SE CAMBIA POR UN 2*/
+				case "Z":
+					numero = "2".concat(numNiF.substring(1,8));
+					document.write(numero);
+					break;
+				/*NUMEROS*/
+				/*SI ES UN NUMERO RECONOCE SI ES UN DNI*/
+				/*DEVUELVE 3*/
+				case "1":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				case "2":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				case "3":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				case "4":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				case "5":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				case "6":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				case "7":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				case "8":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				case "9":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				case "0":
+					document.write(letra+"  -  "+letraNiF);
+					/*if (numero.length<9 && numero>1000 && numero.length>5){
+						if(letra==letraNiF.toUpperCase()){return 3; document.write("BIEN HeCHO")}
+					}else{document.write("ERROR - FALLO EN EL IF");}*/
+					break;
+				default:
+					document.write("ERROR - "+numNiF.substring(0,1));
+	        		document.write(numNiF.substring(0,1));
+					break;
+			}
+
+			/*CONTROLA SI EL CARACTER DE CONTROL ES CORRECTO*/
+			/*DEVUELVE 1 O 2*/
+			if(letra==letraNiF.toUpperCase()){return 1;}
+			return 2;
+    	}
+    
+
+		</script>
+	</head>
+	<body>
+		<script>
+
+			var dni = prompt("INTRODUCE UN NUMERO");
+			document.write(NiF(dni));
+			
+		</script>
+	</body>
+</html>

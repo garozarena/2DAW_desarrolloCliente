@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+         <meta charset="utf-8" /><title></title>
+         <!--<script type="text/javascript" src="prueba.js"></script>-->
+         <style>
+         </style>
+         
+    </head>
+    <body>
+
+    <script>
+        var segundaPagina;
+
+        function crearPrimeraPagina() {
+            var primeraPagina = window.open("primero.html", "primeraPagina", "width=500,height=300");
+        }
+
+        function crearSegundaPagina() {
+            segundaPagina = window.open("segunda.html", "segundaPagina", "width=500,height=300");
+        }
+
+        function cambiarTituloSegundaPagina() {
+            segundaPagina.document.title="titulo cambiado desde la página padre";
+        }
+        function cambiarSegundaPagina(){
+            segundaPagina = window.open("segovia03.html", "segundaPagina", "width=500,height=300");
+        }
+        function cerrarSegundaPagina(){
+            segundaPagina.close();
+        }
+    </script>
+         <a href="javascript:crearPrimeraPagina()">Crear primera página hija</a><br>
+         <a href="javascript:crearSegundaPagina()">Crear segunda página hija</a><br>
+         <a href="javascript:cambiarTituloSegundaPagina()">Cambiar el título a la segunda página hija</a><br>
+         <a href="javascript:cambiarSegundaPagina()">Cambiar segunda página hija</a><br>
+         <a href="javascript:cerrarSegundaPagina()">Cerrar segunda página hija</a><br>
+    </body>
+</html>

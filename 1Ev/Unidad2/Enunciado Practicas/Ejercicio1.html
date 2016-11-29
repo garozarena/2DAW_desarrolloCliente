@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 1</title>
+
+		<script>
+
+		document.write("<h1>");
+
+			function calcularPrimo(num){
+				if (num != null) {
+    				for(var i=2;i<num; i++){
+    					if(num%i==0){
+    						prim=false;
+    					}
+    				}
+				}
+
+				if(prim==false){document.write("EL NUMERO NO ES PRIMO");}
+				else{document.write("EL NUMERO ES PRIMO");}
+
+
+			}
+		
+		</script>
+
+	</head>
+
+	<body>
+
+		<script>
+
+		var numero = prompt("Introduce un número:");
+		var prim = true;
+		calcularPrimo(numero);
+		
+
+		
+		</script>
+
+	</body>
+</html>

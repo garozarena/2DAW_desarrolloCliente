@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 10</title>
+
+		<script>
+
+			function calcularString(cadena){
+
+
+				for(var i=0;i<cadena.length;i++){
+					if(isNaN(cadena.charAt(i))==false){
+						document.write("Esta cadena contiene números");
+						return "";
+					}
+				}
+				document.write("Esta cadena no tiene números");
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<script>
+
+			var cadena = prompt("Introduce:");
+			calcularString(cadena);
+		
+		</script>
+
+	</body>
+</html>
