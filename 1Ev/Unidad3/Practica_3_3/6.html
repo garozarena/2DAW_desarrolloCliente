@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			var cont=1;
+			var myVar;
+			var miVentana;
+
+			function crear() {
+			    miVentana = window.open("", "", "width=200,height=100");
+			    myVar = setInterval(moverVentana, 3000);
+			}
+
+			function moverVentana() {
+
+				var x = miVentana.screenX+25;
+				var y = miVentana.screenY+25;
+				miVentana.moveTo(x, y);
+				miVentana.focus();
+				if(cont==11){clearInterval(myVar);}
+				cont++;
+			}
+
+		</script>
+	</head>
+	<body>
+		<button onClick="javascript:crear()">Crear</button>
+	</body>
+</html>	

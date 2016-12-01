@@ -5,23 +5,14 @@
 		<title></title>
 		<script type="text/javascript">
 
-			/*Crea un documento HTML que va a contener un botón con el literal "Iniciar" y
-			tendrá además otro botón con el literal "Parar" cuando se pulse el botón
-			Iniciar comenzará a mostrarnos en el cuerpo del documento cada 13 segundos
-			los factoriales de los primeros números. Cuando se pulse el botón Parar, se
-			dejarán de mostrar los datos en el cuerpo del documento. Si se vuelve a pulsar
-			Iniciar continua mostrando los factoriales de los primeros números,
-			continuando donde se dejo anteriormente*/
-
-			//document.getElementbyId("documento").innerHTML = numFact;
 			var num=1;
 			var myVar;
 
-			function myFunction() {
-			    myVar = setInterval(alertFunc, 3000);
+			function iniciarIntervalo() {
+			    myVar = setInterval(calcularFactorial, 13000);
 			}
 
-			function alertFunc() {
+			function calcularFactorial() {
 				var numFact = 1;
 				for(var i=1;i<num;i++){
 					numFact*=i;
@@ -36,7 +27,7 @@
 		</style>
 	</head>
 	<body>
-		<button onClick="javascript:myFunction()">Iniciar</button>
+		<button onClick="javascript:iniciarIntervalo()">Iniciar</button>
 		<button onClick="javascript:clearInterval(myVar)">Parar</button>
 		<table>
 			<tr>
