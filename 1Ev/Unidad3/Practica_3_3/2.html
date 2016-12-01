@@ -14,27 +14,21 @@
 			continuando donde se dejo anteriormente*/
 
 			//document.getElementbyId("documento").innerHTML = numFact;
-
 			var num=1;
-			var i = setInterval(factorial(), 5000);
-			
-			
-			/*function pedirPalabra(){
-				palabra = prompt("ESCRIBE UNA PALABRA");
-				if(palabra=="aprobare"){clearInterval(i);}
+			var myVar;
+
+			function myFunction() {
+			    myVar = setInterval(alertFunc, 3000);
 			}
 
-			*/function factorial(){
-				/*var numFact=num;
-				for(var j=1;j<num;j++){
-					numFact*=j;
-				}*/
-				document.getElementById("documento").innerHTML = num;
+			function alertFunc() {
+				var numFact = 1;
+				for(var i=1;i<num;i++){
+					numFact*=i;
+				}
+				document.getElementById("numero").innerHTML = num;
+				document.getElementById("factorial").innerHTML = (numFact*num);
 				num++;
-			}
-
-			function parar(){
-				clearIntercal(i);
 			}
 
 		</script>
@@ -42,8 +36,17 @@
 		</style>
 	</head>
 	<body>
-		<button onClick="javascript:factorial()">Iniciar</button>
-		<button onClick="javascript:parar()">Parar</button>
-		<p id="documento"></p>
+		<button onClick="javascript:myFunction()">Iniciar</button>
+		<button onClick="javascript:clearInterval(myVar)">Parar</button>
+		<table>
+			<tr>
+				<td>Numero</td>
+				<td>Factorial</td>
+			</tr>
+			<tr>
+				<td id="numero"></td>
+				<td id="factorial"></td>
+			</tr>
+		</table>
 	</body>
 </html>	
