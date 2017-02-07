@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8" />
+         <title></title>
+         <script type="text/javascript">
+			
+			function imprimirPagina(){
+				var chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+				var firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+				var opera = navigator.userAgent.toLowerCase().indexOf('opr') > -1;
+				var intExplorer = navigator.userAgent.indexOf("MSIE") > -1 ;
+				var safari = navigator.userAgent.toLowerCase().indexOf('safari')>-1;
+				var nav="";
+
+				if(opera){
+				    nav = "Opera";
+				}else if(chrome){
+				   nav = "Chrome";
+				}else if(firefox){
+				   nav = "Mozilla Firefox";
+				}else if(intExplorer){
+				    nav = "Internet Explorer";
+				}else if(safari){
+				    nav = "Safari";
+				}
+
+				document.getElementById("navegador").innerHTML = nav;
+				document.getElementById("resPantalla").innerHTML = screen.width+"x"+screen.height;
+				document.getElementById("resNav").innerHTML = window.innerWidth+"x"+window.innerHeight;
+		}
+
+         </script>
+    </head>
+    <body onload="imprimirPagina()">
+         
+         <table>
+         	<tr>
+         		<th>NAVEGADOR</th>
+         		<th>RESOLUCIÓN PANTALLA</th>
+         		<th>RESOLUCIÓN NAVEGADOR</th>
+         	</tr>
+         	<tr>
+         		<td id="navegador"></td>
+         		<td id="resPantalla"></td>
+         		<td id="resNav"></td>
+         	</tr>
+         </table>
+    </body>
+</html>

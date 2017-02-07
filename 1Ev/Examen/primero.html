@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" /><title></title>
+        <script type="text/javascript">
+         	
+         	function cambiarTituloVentanaPadre(){
+         		window.opener.document.title="Ventana padre de gestión de ventanas";
+         	}
+
+        </script>
+    </head>
+    <body>
+        <a href="javascript:cambiarTituloVentanaPadre()">Cambiar el título a ventana padre</a><br>
+        <a href="javascript:window.opener.crearSegundaPagina()">Abrir segunda página hija</a><br>
+        <a href="javascript:window.opener.cambiarSegundaPagina()">Cambiar segunda página hija</a><br>
+    </body>
+</html>

@@ -5,32 +5,31 @@
 		<title></title>
 		<script type="text/javascript">
 			
-			/*var coche = new Object();
+			var coche = new Object();
 			coche.marca = "Ford";
 			coche.modelo = "Fiesta";
 			coche.precio = 2000;
 			coche.precioComponentes = 800;
-			coche.nombreCompleto : function nombreCompleto(){return this.marca+" "+this.modelo;}
-			coche.incrementoPrecio : function incrementoPrecio(porcentaje){
+			coche.nombreCompleto = function nombreCompleto(){return this.marca+" "+this.modelo;}
+			coche.incrementoPrecio = function incrementoPrecio(porcentaje){
 				this.precio+=this.precio*porcentaje/100;
 			}
-			coche.incrementoComplementos : function incrementoComplementos(){};*/
+			coche.incrementoComplementos = function incrementoComplementos(){};
 
 			function elementos(){
 
-				//var propiedades = Object.getOwnPropertyNames(miObjeto);
-				//for(var i;i<propiedades.length;i++){
-					document.getElementById("p").innerHTML = "hola";
-				//}
+				var propiedades = Object.getOwnPropertyNames(coche);
+				for(var i=0;i<propiedades.length;i++){
+					document.getElementById("p").innerHTML += propiedades[i]+"<br>";
+				}
 			}
 
 			/*function todos(miObjeto){
 
 			}*/
-			elementos();
 		</script>
 	</head>
-	<body>
+	<body onload="elementos()">
 		<p id="p"></p>
 	</body>
 </html>	
