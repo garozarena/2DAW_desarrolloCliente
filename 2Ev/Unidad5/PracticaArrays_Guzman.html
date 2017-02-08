@@ -4,10 +4,146 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<script type="text/javascript">
-		
+		var nombres = ["Guzman", "Marcos"];
+
+		function añadirElemento(){
+			var nombre = prompt("Introduce un nombre: ");
+			if(nombres.push(nombre)) document.getElementById("p").innerHTML = "Nombre añadido con éxito<br>";
+		}
+
+
+		function buscarElemento(){
+			var nombre = prompt("Introduce un nombre: ");
+			if(nombres.indexOf(nombre)==-1) document.getElementById("p").innerHTML = "El nombre no existe<br>";
+			else document.getElementById("p").innerHTML = "El nombre si existe<br>";
+		}
+
+
+		function numeroVeces(){
+			var nombre = prompt("Introduce un nombre: ");
+			var i = 0;
+			var contadorVeces = 0;
+			while(i!=nombres.length) {
+				if(nombre==nombres[i])contadorVeces++;
+				i++;
+			}
+			document.getElementById("p").innerHTML = contadorVeces.toString();
+		}
+
+
+		function palabraLarga(){
+			var maxLength = 0;
+			var palabraLarga = "";
+			var i=0;
+			var nombresLargos = [];
+
+			while(i!=nombres.length) {
+
+				if(nombres[i].length>maxLength){
+
+					nombresLargos = [];
+					maxLength = nombres[i].length;
+					nombresLargos.push(nombres[i]);
+
+				}else if(nombres[i].length==maxLength) nombresLargos.push(nombres[i]);
+				
+				i++;
+			}
+
+			i=0;
+			document.getElementById("p").innerHTML = "";
+			while(i!=nombresLargos.length){
+				
+				document.getElementById("p").innerHTML += nombresLargos[i].concat("<br>");
+				i++
+
+			}
+
+			document.getElementById("p").innerHTML += "Con una longitud de ".concat(maxLength);
+		}
+
+
+		function palabraCorta(){
+			var minLength = 0;
+			var palabraCorta = "";
+			var i=0;
+			var nombresCortos = [];
+
+			while(i!=nombres.length) {
+				if(i==0) minLength = nombres[i].length;
+				if(nombres[i].length<minLength){
+
+					nombresCortos = [];
+					minLength = nombres[i].length;
+					nombresCortos.push(nombres[i]);
+
+				}else if(nombres[i].length==minLength) nombresCortos.push(nombres[i]);
+				
+				i++;
+			}
+
+			i=0;
+			document.getElementById("p").innerHTML = "";
+			while(i!=nombresCortos.length){
+				
+				document.getElementById("p").innerHTML += nombresCortos[i].concat("<br>");
+				i++
+
+			}
+
+			document.getElementById("p").innerHTML += "Con una longitud de ".concat(minLength);
+		}
+
+
+		function compararBusquedas(){
+
+		}
+
+
+		function borrarElemento(){
+			var nombre = prompt("Introduce un nombre: ");
+			var i = 0;
+			
+			while(i!=nombres.length) {
+				if(nombre==nombres[i])nombres.splice(i,1);
+				i++;
+			}
+
+			document.getElementById("p").innerHTML = nombres;
+		}
+
 		</script>
 	</head>
-	<body onload="elementos()">
+	<body>
+	<!--Añadir un elemento más
+			Se encarga de añadir un nuevo elemento o nombre al array, dicho elemento se
+			pide por teclado-->
+			<button name="añadir" onClick="javascript:añadirElemento()">Añadir Elemento</button><br>
+	<!--Buscar elemento
+			Se pide un nombre por teclado, que es un elemento y muestra un mensaje
+			indicando si ese nombre o elemento esta en el array-->
+			<button name="buscar" onClick="javascript:buscarElemento()">Buscar Elemento</button><br>
+	<!--Número veces
+			Nos pide un nombre por teclado y nos va a aparecer el número de veces que
+			aparece ese nombre en el array-->
+			<button name="numeroVeces" onClick="javascript:numeroVeces()">Número Veces</button><br>
+	<!--Palabra más larga
+			Nos devuelve el nombre que tenga un mayor número de caracteres-->
+			<button name="palabraLarga" onClick="javascript:palabraLarga()">Palabra más larga</button><br>
+<!--Palabra más corta
+			Nos devuelve el nombre que tenga un menor número de caracteres-->
+			<button name="palabraCorta" onClick="javascript:palabraCorta()">Palabra más corta</button><br>
+	<!--Comparar búsquedas
+			Pide un nombre por teclado y nos va mostrar un mensaje indicado si ese
+			nombre está en el array y el número de comparaciones realizadas en una búsqueda
+			secuencial y en una búsqueda dicotómica, para este caso se utilizará un nuevo array
+			que deberemos ordenar-->
+			<button name="compararBusquedas" onClick="javascript:compararBusquedas()">Comparar búsquedas</button><br>
+	<!--Borrar nombre
+			Va a pedir un nombre por teclado y vamos a eliminar todas las apariciones de
+			ese nombre en la tabla. Una vez borradas esas entradas vamos a mostrar el contenido
+			de la tabla-->
+			<button name="borrar" onClick="javascript:borrarElemento()">Borrar Elemento</button><br>
 		<p id="p"></p>
 	</body>
 </html>	
